@@ -1,0 +1,337 @@
+@charset "UTF-8";
+
+/* 01 regras que serão aplicadas para 
+todo o nosso projeto,
+não importando o tamanho da tela */
+
+/* alteração do box-model para border-box */
+*, *::before, *::after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+ }
+ 
+ body, h1, h2, h3, p, figure {
+	margin:0;
+	padding: 0;
+ }
+ 
+
+body {
+	font-family: 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	margin: 0 auto;
+}
+
+/* flex container uteis para facilitar 
+ajustes de posicionamento e alinhamento */
+h1, h1 a, nav, nav a{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+}
+section p
+{
+	font-size: 15px;
+	align-items: center;
+
+}
+/* Tornando as img flexiveis / responsivas */
+img {max-width: 100%;}
+
+/* img no css com tamanho de 100% e no repeat */
+header{
+	background-color: white;
+	width: 100%;
+	text-align: center;
+	display: flex;
+	border: 4px double green;
+
+}
+
+/* limitador dentro do header */
+#limitador{
+	display: inline-flex;
+	align-items: flex-start;
+	width: 30%;
+}
+
+/* logo */
+#logo{
+	width: 50%;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	margin-left: 35px;
+}
+
+/* barra de navegação*/
+nav {
+	width: 100%;
+	display: inline-flex;
+	justify-content: space-around;
+	align-items: left;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+nav li {
+	display: inline-block;
+	line-height: 50px;
+	margin: 0 20px;
+}
+
+nav a {
+	text-decoration: none;
+	color: #222;
+	font-weight:bold;
+	width: 100%;
+	text-align: left;
+	text-transform: uppercase;
+}
+
+nav a:hover{
+	background-color: #222;
+	color: #fff;
+	border-radius:5px;
+}
+
+/* inserir o id destaque */
+
+
+/* criar uma regra para o <hr /> com as seguintes caracteristicas
+altura 2px
+sem borda
+cor de fundo qualquer
+largura 50%
+margin 15px topo/rodape
+margin auto para lateral
+sombra qualquer uma */
+hr{
+	height: 2px;
+	border: none;
+	background: violet;
+	width: 50%;
+	margin: 15px auto;
+	box-shadow: #555 3px 3px 25px 3px;
+}
+
+/* rodape */
+footer {
+ 	text-align: lef;
+	padding-top: 10px;
+}
+
+footer p {
+	margin: 10px;
+}
+
+footer address {
+	padding-bottom: 10px;
+}
+
+/* div container dentro de body */
+.container {
+	width: 95%;
+	margin: 0 auto;
+	padding: 0 auto;
+}
+.loginContainer
+{
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-110px;
+	margin-top:-40px;
+}
+
+/* pagina contato */
+#mapa{
+	width: 49%;
+	float: right;
+}
+
+#formulario{
+	width: 49%;
+	float: left;
+}
+
+#video-institucional, #titulo-centralizado{
+	clear: both;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 10px;
+}
+
+/* -- formulario -- */
+input {
+	width: 100%;
+	padding: 3px;
+	border: solid #777 1px;
+}
+
+input:focus, textarea:hover, input:hover, textarea:focus{
+	/* border: cor estilo tamanho - tudo em uma linha */
+	border: #004891; 
+	border-style: dotted solid;
+	border-width: 3px;
+	background: #b9e3ff;
+}
+
+textarea {
+	width: 100%;
+	padding: 3px;
+	border: solid #777 1px;
+}
+
+textarea:hover, textarea:focus{
+	/* border: cor estilo tamanho - tudo em uma linha */
+	border: #004891; 
+	border-style: dotted solid;
+	border-width: 3px;
+	background: #b9e3ff;
+}
+
+#enviar{
+	border: red dashed 1px;
+	background: #0191ed;
+	color: rgb(255, 255, 255);
+	width: 150px;
+	margin-top: 15px;
+}
+
+input[type=submit]{
+	font-size: 22px;
+	text-transform: uppercase;
+}
+
+input[autofocus]{
+	background: #999;
+}
+
+#enviar:hover, #enviar:focus{
+	border: #000 solid 1px;
+	transform: scale(1.08);
+	box-shadow: 3px 3px 5px 5px #ccc;
+}
+/* pagina produtos - formatando tabela */
+table{
+	display: flex;
+	justify-content: left;
+	text-transform: uppercase;
+	border-collapse: collapse;
+	padding-bottom: 60px;
+
+}
+
+td{
+	border: solid 5px #333;
+	padding: 8px 50px;
+	text-align: center;
+}
+
+/* formatação das linhas impares com odd - linhas pares com even */
+tr:nth-child(odd){
+	background: #ccc;
+}
+tr:nth-child(even){
+	background: #fff;
+}
+/* :first-child formatação do 1º elmento filho */
+tr:first-child{
+	background: #fff;
+	font-weight: bold;
+}
+/* last-child o ultimo filho*/
+tr:last-child{
+	background: #555;
+	color: #fff;
+	font-weight: bold;
+}
+/* red aplicado no 3º td da 2º tr */
+tr:nth-child(2) td:nth-child(+3), 
+tr:nth-child(3) td:nth-child(3){
+	color: green;
+	font-weight: bold;
+}
+/* */
+tr:nth-child(4) td:nth-child(2n+3){
+	color: red;
+	font-weight: bold;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
